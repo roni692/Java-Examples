@@ -6,39 +6,35 @@ import java.util.Scanner;
 
 public class studentt 
 {
+	int studentId;
+	char studentType;
 	String studentName;
 	String ResidentialStatus;
 	int age;
-	//int asIntage;
+	long feesPerMonth;
+	
 	public static void main(String[] args)
 	{
 		studentt student = new studentt();
 		System.out.println("Enter Student name :");
 		Scanner sc = new Scanner(System.in);
-		while(sc.hasNext())
-		{
-			if(sc.hasNextLine())
-			{	
-				String name = sc.nextLine();
-				String status = sc.nextLine();
-				//int ageAsInt = sc.nextInt(); 
-				student.setstudentName(name);
-				student.setResidentialStatus(status);
-				System.out.println("Student Name is :"+student.getstudentName());
-				System.out.println("Residential Status :"+student.getResidentialStatus());
-			}
-			else
-			{
-				int age = sc.nextInt();
-				student.setage(age);
-				System.out.println("age is"+student.getage());
-			}	
-		}
-			
+		String name = sc.nextLine();
+		student.setstudentName(name);
+		System.out.println("Enter residential address");
+		//String status = sc.nextLine();
+		//student.setResidentialStatus(status);
+		String status1 = student.setResidentialStatus("hostilite");
+		System.out.println("Enter Student age");
+		int age = sc.nextInt(); 
+		student.setage(age);
+		//System.out.println("Student fees is");
+		//long fees = sc.nextLong();
+		System.out.println("Student Name is :"+student.getstudentName());
+		System.out.println("Residential Status :"+student.getResidentialStatus());
+		System.out.println("Stduent age :"+student.getage());
+		System.out.println("Student Fees: "+student.getfeesPerMonth());
 		
-		}	
-		
-	
+	}	
 	public  void setage(int a)
 	{
 		age = a;
@@ -55,33 +51,44 @@ public class studentt
 	{
 		return studentName;
 	}
-	public void setResidentialStatus(String sr)
+	//public void setResidentialStatus(String sr)
+	//{
+		
+		//	String sr ="Daylite";
+		//ResidentialStatus = sr;
+	//}
+	//public String getResidentialStatus()
+	//{
+		//return ResidentialStatus;
+	//}
+	public String setResidentialStatus(String sr)
 	{
-		ResidentialStatus = sr;
+		Status1 =sr;
+		return "status1";
+		//String sr ="Daylite";
+		//ResidentialStatus = sr;
 	}
 	public String getResidentialStatus()
 	{
-		return ResidentialStatus;
+		return status1;
 	}
 	
-}
-/*public static void Data(Scanner sc)
-{
-	studentt studentt = new studentt();
 	
-		String name;
-		String residentialaddress;
-		String fees;
-		String studentid;
-		int feesAsInt;
-		int studentIdasInt;
-		System.out.println("Enter student name: ");
-        name = sc.nextLine();
-        studentt.setstudentName(name);
-        System.out.println(studentt.getstudentName());
-        //System.out.println("Enter residential address : ");
-        //sr = sc.nextLine();
-        //age = sc.nextLine();
-        //ageAsInt = Integer.parseInt(age);
-       
-}*/
+	public long getfeesPerMonth()
+	{
+		return 200000;
+	}
+	void calculateFees(double semesterFees)
+	{
+		feesPerMonth = (long) (semesterFees/6.0);
+		System.out.println("Student fees without hostel"+feesPerMonth);
+		
+	}
+	void calculateFees(double semesterFees, double hostelFees)
+	{
+		feesPerMonth = (long)(semesterFees/6.0);
+		feesPerMonth =(long)(feesPerMonth + hostelFees);
+		System.out.println("Student fees with hostel"+feesPerMonth);
+		
+	}
+}

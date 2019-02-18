@@ -4,9 +4,10 @@ public class Student
 {
 	int studentId;
 	char studentType;
-	String firstname;
-	String lastname;
+	//String firstname;
+	//String lastname;
     String studentName;
+	//private String firstname;
 		Student()
 		{
 			studentId =550;
@@ -14,17 +15,33 @@ public class Student
 
 		Student(int id,char sType,String firstname,String lastname)
 		{
-			this.studentId=id;
+			studentId=id;
 			studentType=sType;
-			this.firstname = firstname;
-			this.lastname = lastname;
+			firstname = firstname;
+			lastname = lastname;
 			this.studentName = firstname+lastname;
 		
 		}
-		public void SetStudentName(String firstname, String lastName)
+		public void setstudentId(int id)
 		{
-			this.firstname=firstname;
-			this.lastname=lastname;
+			studentId=id;
+		}
+		public int getstudentId()
+		{
+			return studentId;
+		}
+		public void setsType(char ch)
+		{
+			studentType=ch;
+		}
+		public char getsType()
+		{
+			return studentType;
+		}
+		public void SetStudentName(String firstname, String lastname)
+		{
+			firstname=firstname;
+			lastname=lastname;
 			studentName=firstname+lastname;
 		}
 		public String getStudentName()
@@ -32,21 +49,19 @@ public class Student
 			return studentName;
 			
 		}
-		void displayDetails(Student obj)
-		{   
-			//String studentName = firstname+lastname; 
-			System.out.println("Student details");
-			System.out.println("Student Type "  +studentType);
-			System.out.println("Student firstname "  +obj.firstname);
-			System.out.println("Student lastname "  +obj.lastname);
-			System.out.println("Student first and last name "  +obj.studentName);
 		
-		}
 		public static void main(String[] args)
 		{
-			Student studentOne = new Student(10,'D',"Bony","Thomas");
-			studentOne.displayDetails(studentOne);
-			Student studentTwo = new Student(20,'H',"Denil","Bose");
-			studentTwo.displayDetails(studentTwo);
+			Student st = new Student();
+			st.setstudentId(12);
+			st.setsType('F');
+			st.SetStudentName("ronish", "panjwani");
+			System.out.println("Student Id  "+st.getstudentId());
+			System.out.println("Student Type  "+st.getsType());
+			System.out.println("Student Name  "+st.getStudentName());
+			Student st1 =new Student(10,'L',"Firoj","Panjwani");
+			System.out.println("Student Id  "+st1.getstudentId());
+			System.out.println("Student Type  "+st1.getsType());
+			System.out.println("Student Name  "+st1.getStudentName());
 		}
 }
