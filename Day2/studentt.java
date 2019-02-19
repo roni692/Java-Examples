@@ -21,9 +21,9 @@ public class studentt
 		String name = sc.nextLine();
 		student.setstudentName(name);
 		System.out.println("Enter residential address");
-		//String status = sc.nextLine();
-		//student.setResidentialStatus(status);
-		String status1 = student.setResidentialStatus("hostilite");
+		String status = sc.nextLine();
+		student.setResidentialStatus(status);
+		//String status1 = student.setResidentialStatus("hostilite");
 		System.out.println("Enter Student age");
 		int age = sc.nextInt(); 
 		student.setage(age);
@@ -61,16 +61,13 @@ public class studentt
 	//{
 		//return ResidentialStatus;
 	//}
-	public String setResidentialStatus(String sr)
+	public void setResidentialStatus(String sr)
 	{
-		Status1 =sr;
-		return "status1";
-		//String sr ="Daylite";
-		//ResidentialStatus = sr;
+		ResidentialStatus = sr;
 	}
 	public String getResidentialStatus()
 	{
-		return status1;
+		return ResidentialStatus;
 	}
 	
 	
